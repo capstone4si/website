@@ -1,0 +1,268 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    margin: 0;
+    font-weight: bold;
+}
+
+header h1 .si {
+    font-family: 'Poppins', sans-serif;
+    color: #A62A15;
+}
+
+header h1 .panda {
+    font-family: 'Poppins', sans-serif;
+    color: #0f4a29;
+}
+
+nav{
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    float: right;
+    display: inline-block;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #0f4a29;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a.active, nav ul li a:hover {
+    color: #A62A15;
+}
+
+
+main {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: flex-start;
+    margin-top: 50px;
+    gap: 20px;
+}
+
+.form-container {
+    background-color: #FAFAFA;
+    padding: 20px; 
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+    max-width: 400px; 
+    margin: 0;
+    margin-left: auto;
+
+}
+
+.form-container h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #A62A15;
+    margin-bottom: 20px;
+    text-align: center; 
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-group input[readonly] {
+    background-color: #f1f1f1;
+}
+
+button.btn {
+    background-color: #145E32;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+button.btn:hover {
+    background-color: #0f4a29;
+}
+
+.image-container {
+    width: 45%; 
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-right: 100px;
+}
+
+.image-container img {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-container {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 20px;
+    }
+
+    .image-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .image-container img {
+        max-width: 100%;
+        border-radius: 15px;
+    }
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0;
+}
+
+.card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    width: 100%;
+    padding: 20px;
+}
+.contentD{
+    display: flex;
+    flex-direction: column;
+}
+
+.card-image {
+    flex: 1;
+    max-width: 400px;
+    margin-right: 20px;
+}
+
+.card-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.card-details {
+    flex: 1.5;
+    background-color: #F0F0F0;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.card-details p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.status {
+    color: #145E32;
+    font-weight: bold;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    gap: 10px; 
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+}
+
+.btn-upload, .btn-report {
+    background-color: #145E32;
+    color: white;
+    padding: 10px 85px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+    width: 100%; 
+}
+
+.btn-upload:hover, .btn-report:hover {
+    background-color: #0f4a29;
+}
+
+.btn-report {
+    background-color: #A62A15;
+    max-width: 400px;
+}
+
+.btn-report:hover {
+    background-color: #8C2411;
+}
