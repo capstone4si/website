@@ -189,8 +189,13 @@ button.btn:hover {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    flex-direction: row;
     width: 100%;
     padding: 20px;
+}
+.contentD{
+    display: flex;
+    flex-direction: column;
 }
 
 .card-image {
