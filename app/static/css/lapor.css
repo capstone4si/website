@@ -1,0 +1,122 @@
+*,
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    background-color: #EEEEE4;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+
+main {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.form-container {
+    
+    padding: 20px; 
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+    max-width: 400px; 
+    margin: 0;
+    margin-left: auto;
+
+}
+
+.form-container h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #A62A15;
+    margin-bottom: 20px;
+    text-align: center; 
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-group input[readonly] {
+    background-color: #f1f1f1;
+}
+
+button.btn {
+    background-color: #145E32;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+button.btn:hover {
+    background-color: #0f4a29;
+}
+
+.image-container {
+    width: 45%; 
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-right: 100px;
+}
+
+.image-container img {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-container {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 20px;
+    }
+
+    .image-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .image-container img {
+        max-width: 100%;
+        border-radius: 15px;
+    }
+}
+

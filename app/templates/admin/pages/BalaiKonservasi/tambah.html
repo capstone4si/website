@@ -1,0 +1,46 @@
+{% extends "/admin/layout/index.html" %}
+
+
+{% block content %}
+<div class="overview">
+    <div class="title">
+        <i class="uil uil-files-landscapes"></i>
+        <span class="text">Tambah Data Balai Konservasi</span>
+    </div>
+
+    <div class="activity">
+        <form class="activity-form">
+            <div class="form-group">
+                <label for="gambar">Gambar</label>
+                <input type="file" id="gambar" name="gambar">
+            </div>
+    
+            <div class="form-group">
+                <label for="namaBalai">Nama Balai</label>
+                <input type="text" id="namaBalai" name="namaBalai" placeholder="Masukkan nama balai">
+            </div>
+    
+            <div class="form-group">
+                <label for="deskripsi">Deskripsi</label>
+                <textarea id="deskripsi" name="deskripsi" rows="3" placeholder="Masukkan deskripsi"></textarea>
+            </div>
+    
+            <div class="form-group">
+                <label for="provinsi">Provinsi</label>
+                <input type="text" id="provinsi" name="provinsi" placeholder="Masukkan provinsi">
+            </div>
+    
+            <div class="form-group">
+                <label for="alamat">Alamat</label>
+                <input type="text" id="alamat" name="alamat" placeholder="Masukkan alamat">
+            </div>
+    
+            <div class="form-group actions">
+                <button type="submit" class="save-btn">Simpan</button>
+                <button type="reset" class="cancel-btn">Batal</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

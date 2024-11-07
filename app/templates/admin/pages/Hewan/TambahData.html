@@ -1,0 +1,68 @@
+{% extends "/admin/layout/index.html" %}
+
+
+{% block content %}
+
+<div class="overview">
+    <div class="title">
+        <i class="uil uil-files-landscapes"></i>
+        <span class="text">Tambah Data Hewan</span>
+    </div>
+
+    <div class="activity" >
+        <form class="activity-form"enctype="multipart/form-data" method="POST" action="{{url_for('tambahHewan')}}" >
+            <div class="form-group">
+                <label for="nama">Nama</label>
+                <input type="text" id="nama" name="nama" placeholder="Masukkan nama hewan">
+            </div>
+            <div class="form-group">
+                <label for="jumlah">Jumlah</label>
+                <input type="number" id="jumlah" name="jumlah" placeholder="Masukkan jumlah">
+            </div>
+            <div class="form-group">
+                <label for="deskripsi">Deskripsi</label>
+                <input type="text" id="deskripsi" name="deskripsi" placeholder="Masukkan deskripsi">
+            </div>
+            <div class="form-group">
+                <label for="lokasi">Lokasi</label>
+                <input type="text" id="lokasi" name="lokasi" placeholder="Masukkan level">
+            </div>
+            <div class="form-group">
+                <label for="level">Level</label>
+                <input type="text" id="level" name="level" placeholder="Masukkan level">
+            </div>
+            <div class="form-group">
+                <label for="id_kategori">Category</label>
+                <select name="id_kategori" class="form-control" required>
+                    {% for kategori in kategoris %}
+                    <option value="{{ kategori.id_kategori }}">{{ kategori.nama_kategori }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="url_gambar">Tambahkan Gambar</label>
+                <div id="image-upload-container">
+                    <input type="file" name="url_gambar" accept="image/*" required>
+                </div>
+                
+            </div>
+            <div class="form-group actions">
+                <button type="submit" class="save-btn">Simpan</button>
+                <button type="reset" class="cancel-btn">Batal</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    function addImageInput() {
+        // Create a new file input field
+        const container = document.getElementById('image-upload-container');
+        const newInput = document.createElement('input');
+        newInput.type = 'file';
+        newInput.name = 'images';  // Ensure all inputs have the same name for file upload
+        newInput.classList.add('form-control', 'mb-2');
+        container.appendChild(newInput);
+    }
+</script>
+
+{% endblock %}

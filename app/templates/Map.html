@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map Balai Konservasi</title>
+    <meta charset="utf-8" />
+    <link 
+        rel="stylesheet" 
+        href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"
+    />
+    <style>
+        .custom-popup .leaflet-popup-content-wrapper {
+            background-color: #f8f9fa;
+            border-radius: 10px; 
+            padding: 10px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+        }
+        .custom-popup .leaflet-popup-content {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #333;
+        }
+        .custom-popup .leaflet-popup-tip {
+            background: #f8f9fa;
+        }
+        .popup-image {
+            width: 100%;
+            max-height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .close-btn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="map" style="width: 100%; height: 650px">
+    
+    </div>
+    <script
+        src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
+    </script>
+    <script>
+        var planes = [
+            {
+                name: "Balai Konservasi Sumber Daya Alam Aceh",
+                lat: 5.528882347086243,
+                lng: 95.29385578465542,
+                description: "Aceh conservation center dedicated to wildlife and natural resources.",
+                image: "/static/image/gajah.png"
+            },
+            {
+                name: "Balai Konservasi Sumber Daya Alam Sumatra Utara",
+                lat: 3.5443164640814775,
+                lng: 98.6982041,
+                description: "Protects the forests and wildlife of Northern Sumatra.",
+                image: "https://via.placeholder.com/300x150.png?text=Sumatra+Utara"
+            },
+            {
+                name: "Balai Konservasi Sumber Daya Alam Riau",
+                lat: 0.46352253940349153,
+                lng: 101.41554538465542,
+                description: "Focuses on the conservation of Riau's ecosystems.",
+                image: "https://via.placeholder.com/300x150.png?text=Riau"
+            },
+            {
+                name: "Balai Konservasi Sumber Daya Alam Sumatra Barat",
+                lat: -0.9163861746322387,
+                lng: 100.36001857910635,
+                description: "Responsible for conservation efforts in West Sumatra.",
+                image: "https://via.placeholder.com/300x150.png?text=Sumatra+Barat"
+            },
+            {
+                name: "Balai Konservasi Sumber Daya Alam Bengkulu dan Lampung",
+                lat: -3.796567523674085,
+                lng: 102.27000216609987,
+                description: "Covers both Bengkulu and Lampung regions for conservation.",
+                image: "https://via.placeholder.com/300x150.png?text=Bengkulu+Lampung"
+            }
+        ];
+
+        var map = L.map('map').setView([-3.0060, 115.6155], 4);
+        mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+        L.tileLayer(
+            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; ' + mapLink + ' Contributors',
+            maxZoom: 18,
+        }).addTo(map);
+
+        for (var i = 0; i < planes.length; i++) {
+            (function(i) {
+                var marker = new L.marker([planes[i].lat, planes[i].lng])
+                    .bindPopup(
+                        "<img src='" + planes[i].image + "' class='popup-image'>" + // Add image
+                        "<b>" + planes[i].name + "</b><br>" + 
+                        planes[i].description + "<br>" +
+                        "<button class='close-btn' onclick='zoomOut()'>Close</button>", // Add close button
+                        { className: 'custom-popup' }
+                    )
+                    .addTo(map);
+                
+                marker.on('click', function() {
+                    // Zoom ke lokasi saat marker diklik
+                    map.setView([planes[i].lat, planes[i].lng], 12); // Set zoom level sesuai kebutuhan
+                    marker.openPopup(); // Buka popup setelah zoom
+                });
+            })(i);
+        }
+
+        // Function untuk melakukan zoom out kembali
+        function zoomOut() {
+            map.setView([-3.0060, 115.6155], 4); // Kembali ke zoom level awal
+            map.closePopup(); // Tutup semua popup
+        }
+    </script>
+</body>
+</html>
